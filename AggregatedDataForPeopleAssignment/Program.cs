@@ -104,19 +104,19 @@ namespace LastNameListApp
             return average;
         }
 
-        static List<Person>? GetPeopleInWeightRange(List<Person> people, double minWieght, double maxWieght)
+        static List<Person>? GetPeopleInWeightRange(List<Person> people, double minWeight, double maxWeight)
         {
-            return people?.Where(x => x.Weight >= minWieght && x.Weight <= maxWieght)?.ToList();
+            return people?.Where(x => x.Weight >= minWeight && x.Weight <= maxWeight)?.ToList();
         }
 
-        static int CountPeopleInWeightRange(List<Person> people, double minWieght, double maxWieght)
+        static int CountPeopleInWeightRange(List<Person> people, double minWeight, double maxWeight)
         {
-            return GetPeopleInWeightRange(people, minWieght, maxWieght)?.Count ?? 0;
+            return GetPeopleInWeightRange(people, minWeight, maxWeight)?.Count ?? 0;
         }
 
-        static float AverageAgeOfPeopleInWeightRange(List<Person> people, double minWieght, double maxWieght)
+        static float AverageAgeOfPeopleInWeightRange(List<Person> people, double minWeight, double maxWeight)
         {
-            var peopleInWeightRange = GetPeopleInWeightRange(people, minWieght, maxWieght);
+            var peopleInWeightRange = GetPeopleInWeightRange(people, minWeight, maxWeight);
             if(peopleInWeightRange?.Count > 0)
                 return CalAverageAgeOfPeople(peopleInWeightRange);
             return 0;
